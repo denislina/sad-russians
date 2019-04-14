@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.1)
+project(FindFace)
+set(CMAKE_CXX_COMPILER "g++")
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_FLAGS -std=c++14)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+
+SET(OpenCV_DIR /home/radi4/opencv)
+SET(CMAKE_PREFIX_PATH /home/radi4/libtorch/share/cmake/Torch)
+find_package(OpenCV REQUIRED)
+find_package(Torch REQUIRED)
+add_executable(FindFace FindFace.cpp )
+target_link_libraries( FindFace ${OpenCV_LIBS} "${TORCH_LIBRARIES}")
