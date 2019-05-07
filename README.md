@@ -28,7 +28,7 @@ The sad, The happy, The ugly, The creepy.
 ### Сборка на Mac OS
 
 - `git clone https://github.com/denislina/sad-russians.git`
-- `cd src`
+- `cd sad-russians/src`
 - `bash install.sh`
 
 ## Авторы
