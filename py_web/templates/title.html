@@ -1,0 +1,82 @@
+<!-- @import 'custom_progress.css'; -->
+
+<!doctype html>
+<head>
+    <style>
+    #heading { color: #8b0000; }
+    #loadBtn{
+        position: relative;
+           top: 150px;
+        font-family: calibri;
+        width: 150px;
+        padding: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border: 1px dashed #BBB; 
+        text-align: center;
+        background-color: #DDD;
+        cursor:pointer;
+      }
+    .brd {
+        border: 5px double black; /* Параметры границы */
+        background: gray; /* Цвет фона */
+        padding: 20px; /* Поля вокруг текста */
+    }
+    </style>
+    <script type="text/javascript">
+    function getFile(){
+        document.getElementById("upfile").click();
+    }
+    function sub(obj){
+        var file = obj.value;
+        var fileName = file.split("\\");
+        document.getElementById("yourBtn").innerHTML = fileName[fileName.length-1];
+        document.myForm.submit();
+        event.preventDefault();
+    }
+    </script>
+    <link rel="stylesheet" media="screen" href ="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="custom_progress.css">
+</head>
+<title>sad-russians</title>
+
+<body>
+    <div class="brd">
+<center>
+    <h1 id="heading">
+        Загрузка фото
+    </h1>
+</center>
+
+<center>
+<form action="" method=post enctype=multipart/form-data class="custom-file-upload">
+  <p>
+    <form action=uploaded_file method="POST" enctype="multipart/form-data" name="myForm">
+        <div id="yourBtn" method="POST" style="height: 500px; width: 1000px; border:4px dashed #BBB; cursor:pointer; background: #EEE" onclick="getFile()">
+            
+                <p><font size="2" >Кликни</font></p>
+            
+        
+        </div>
+        <div style='height: 20px;width: 0px; overflow:hidden;'>
+            <input id="upfile" type="file"  name=file value="upload" onchange="sub(this)"/>
+        </div>
+            <input type=submit value='submit' class="btn btn-success-red" style="height: 50px; width: 100px;">
+    </form>
+</center>
+
+    <p align="right"><font size="3" color=DarkRed>Русский характер - это непрестанные приливы и отливы, <br>
+    и чисто русское словечко "Ничего!" хорошо выражает фатализм этих <br>
+    нескончаемых колебаний. <br>
+    Д. Голсуорси
+    </font>
+    </p>
+</div>
+</body>
+</form>
+

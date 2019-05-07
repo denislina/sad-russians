@@ -43,15 +43,7 @@ def upload_file():
             new_filename = 'result.gif'
             return redirect(url_for('uploaded_file',
                                     filename=new_filename))
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form action="" method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-    '''
+    return render_template('title.html')
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -64,6 +56,7 @@ def index():
             args["file_size_error"] = len(file_bytes) == MAX_FILE_SIZE
         args["method"] = "POST"
     return render_template("loader.html", args=args)
+
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
