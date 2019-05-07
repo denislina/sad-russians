@@ -12,6 +12,10 @@ The sad, The happy, The ugly, The creepy.
 - изменение лица на (грустное/счастливое/иногда криповое)
 - загрузка преобразованной фотографии
 
+<img src="https://pp.userapi.com/c850136/v850136493/13f0cc/bHQNApSwdrg.jpg" width="700" height="400">
+
+<img src="https://pp.userapi.com/c844417/v844417493/1fde54/JUI0kEWwXIU.jpg" width="700" height="400">
+
 ## Начало работы
 
 - как склонировать проект
