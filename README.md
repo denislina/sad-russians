@@ -22,6 +22,7 @@ The sad, The happy, The ugly, The creepy.
 
 - LibTorch
 - OpenCV
+
 Установочный скрипт (см. ниже) скачает и соберёт зависимости. 
 
 ### Сборка на Mac OS
