@@ -2,6 +2,7 @@ import os
 from flask import Flask, request, redirect, url_for, render_template, send_from_directory
 from werkzeug.utils import secure_filename
 import imageio
+import subprocess
 
 MAX_FILE_SIZE = 1024 * 1024 + 1
 
@@ -37,7 +38,8 @@ def upload_file():
             name, extension = filename.split('.')
             print ('name, extension', name, extension)
             #todo add ML
-            new_filename = get_filename('{}_changed'.format(name), extension)
+            subprocess.call(['../src/ChangeEmotion --happy {}/{}'.format(UPLOAD_FOLDER, filename)])
+            new_filename = '{}_happy.jpeg'.format(name)
             # file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
             create_gif([filename, new_filename])
             new_filename = 'result.gif'
