@@ -52,3 +52,4 @@ CycleGan обучался на датасете [CelebA](http://mmlab.ie.cuhk.ed
 ## Благодарности
 
 * [идея CycleGan](https://hardikbansal.github.io/CycleGANBlog/), [Код](https://github.com/aitorzip/PyTorch-CycleGAN)
+* [модель классификации Facial-Expression-Recognition.Pytorch](https://github.com/WuJie1010/Facial-Expression-Recognition.Pytorch)
