@@ -13,5 +13,5 @@
 #include <thread>
 #include <cmath>
 
-void ProcessFile(const std::string&, torch::jit::script::Module*, const std::string&);
+void ProcessFile(const std::string&, torch::jit::script::Module*, torch::jit::script::Module*, cv::CascadeClassifier&, const std::string&);
 

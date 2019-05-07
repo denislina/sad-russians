@@ -17,16 +17,19 @@
 class FaceHandler {
 public:
     FaceHandler(const cv::Mat& image) : image_(image) { CreateKernel_();}
-    void ProcessFace(const cv::Rect&, torch::jit::script::Module*);
+    void ProcessFace(const cv::Rect&, torch::jit::script::Module*, torch::jit::script::Module*, const std::string&);
 private:
     cv::Mat image_;
     std::mutex mutex_;
     cv::Mat kernel_;
 
     void CreateKernel_();
+    std::string ClfFace_(const cv::Mat&, torch::jit::script::Module*);
     cv::Mat ApplyModel_(const cv::Mat&, torch::jit::script::Module*);
     void InsertFace_(const cv::Rect&, cv::Mat);
 
     static constexpr int rows_ = 256;
     static constexpr int cols_ = 256;
+    static constexpr int small_rows_ = 48;
+    static constexpr int small_cols_ = 48;
 };

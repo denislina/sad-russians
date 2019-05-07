@@ -3,12 +3,14 @@ from flask import Flask, request, redirect, url_for, render_template, send_from_
 from werkzeug.utils import secure_filename
 import imageio
 import subprocess
+import sys
+sys.path.append('../')
 
 MAX_FILE_SIZE = 1024 * 1024 + 1
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = './uploads'
+UPLOAD_FOLDER = '../examples'
 ALLOWED_EXTENSIONS = set([ 'jpg', 'jpeg', 'JPG', 'JPEG'])
 
 app = Flask(__name__)
@@ -36,11 +38,9 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             name, extension = filename.split('.')
-            print ('name, extension', name, extension)
-            #todo add ML
-            subprocess.call(['../src/ChangeEmotion --happy {}/{}'.format(UPLOAD_FOLDER, filename)])
+           
+            subprocess.call('../src/build/ChangeEmotion --happy {}/{} '.format(UPLOAD_FOLDER, filename),  shell=True)
             new_filename = '{}_happy.jpeg'.format(name)
-            # file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
             create_gif([filename, new_filename])
             new_filename = 'result.gif'
             return redirect(url_for('uploaded_file',

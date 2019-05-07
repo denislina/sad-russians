@@ -22,4 +22,4 @@ void TensortoMat(const at::Tensor&, cv::Mat);
 
 void HandleEdges(const cv::Mat&, const torch::Tensor&, torch::Tensor*);
 
-std::vector<cv::Rect> FindFrontFaces(const cv::Mat);
+std::vector<cv::Rect> FindFrontFaces(const cv::Mat, cv::CascadeClassifier&);

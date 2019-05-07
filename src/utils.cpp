@@ -60,8 +60,8 @@ void TensortoMat(const at::Tensor& tensor, cv::Mat mat) {
 }
 
 void HandleEdges(const cv::Mat& mat, const torch::Tensor& input, torch::Tensor* output_ptr) {
-    constexpr float max_limit = 0.6;
-    constexpr float min_limit = 0.4;
+    constexpr float max_limit = 0.5;
+    constexpr float min_limit = 0.3;
     int rows = mat.rows;
     int cols = mat.cols;
 
@@ -85,14 +85,8 @@ void HandleEdges(const cv::Mat& mat, const torch::Tensor& input, torch::Tensor* 
     }
 }
 
-std::vector<cv::Rect> FindFrontFaces(cv::Mat image) {
+std::vector<cv::Rect> FindFrontFaces(cv::Mat image, cv::CascadeClassifier& face_detector) {
     //path to cascade weights
-    static const std::string cascade_weights = "../haarcascade_frontalface_default.xml";
-
-    cv::CascadeClassifier face_detector;
-    if (!face_detector.load(cascade_weights)) {
-        throw std::runtime_error("Can't load cascade");
-    }
 
     //translate to gray
     cv::cvtColor(image, image, cv::COLOR_BGR2GRAY);
