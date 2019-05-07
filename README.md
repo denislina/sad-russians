@@ -35,9 +35,9 @@ The sad, The happy, The ugly, The creepy.
 
 Disclaimer: Обучение моделей производилось на Python. При этом сама утилита от Python не пострадала.
 
-emotion_recognition.ipynb - обучение модели классификации на веселых и грустных.
-CycleGanSmile.ipynb - обучение модели CycleGan.
-CycleGanApply.ipynb - применение модели CycleGan для изменения эмоции.
+- emotion_recognition.ipynb - обучение модели классификации на веселых и грустных.
+- CycleGanSmile.ipynb - обучение модели CycleGan.
+- CycleGanApply.ipynb - применение модели CycleGan для изменения эмоции.
 
 CycleGan обучался на датасете [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
 . Небольшая выборка представлена в datasets/img_align_celeba_50/
@@ -52,4 +52,3 @@ CycleGan обучался на датасете [CelebA](http://mmlab.ie.cuhk.ed
 ## Благодарности
 
 * [идея CycleGan](https://hardikbansal.github.io/CycleGANBlog/), [Код](https://github.com/aitorzip/PyTorch-CycleGAN)
-* 
