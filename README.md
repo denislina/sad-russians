@@ -37,7 +37,7 @@ The sad, The happy, The ugly, The creepy.
 
 В папке `src/build`
 ```
-./ChangeEmotion --happy <absolete/path/to/pic.jpg>
+./ChangeEmotion --happy <path/to/pic.jpg>
 ```
 Программа положит в папку с исходной картинкой `pic.jpg` новый файл `pic_happy.jpeg`. Примеры картинок можно найти в папке examples.
 
