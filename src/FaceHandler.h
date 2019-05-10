@@ -10,6 +10,7 @@
 #include <vector>
 #include <stdexcept>
 #include <cstring>
+#include <cstdint>
 #include <cmath>
 #include <mutex>
 #include <algorithm>

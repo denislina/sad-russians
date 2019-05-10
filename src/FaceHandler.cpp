@@ -82,7 +82,7 @@ std::string FaceHandler::ClfFace_(const cv::Mat& face_img, torch::jit::script::M
     mutex_.lock();
     auto output = clf->forward({input}).toTensor();
     mutex_.unlock();
-    int max_index = *torch::argmax(output).data<long>();
+    int max_index = *torch::argmax(output).data<int64_t>();
     if (max_index == 0 || max_index == 1 || max_index == 2 || max_index == 4 || max_index == 6) {
         return "sad";
     }
