@@ -38,6 +38,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             name, extension = filename.split('.')
+            file.save('{}/{}'.format(UPLOAD_FOLDER, secure_filename(file.filename)))
            
             subprocess.call('../src/build/ChangeEmotion --happy {}/{} '.format(UPLOAD_FOLDER, filename),  shell=True)
             new_filename = '{}_happy.jpeg'.format(name)
